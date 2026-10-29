@@ -1,0 +1,63 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-height: var(--touch-target);
+  padding: var(--space-3) var(--space-6);
+  border: var(--border-width) solid transparent;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: var(--font-weight-semibold);
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+  transition:
+    background-color var(--duration-fast) var(--ease-standard),
+    border-color var(--duration-fast) var(--ease-standard),
+    color var(--duration-fast) var(--ease-standard);
+}
+
+.button--lg {
+  min-height: 52px;
+  padding: var(--space-4) var(--space-8);
+}
+
+/* Primary uses the darker rose so white text meets WCAG AA contrast */
+.button--primary {
+  background-color: var(--color-primary-hover);
+  color: var(--color-on-primary);
+}
+
+.button--primary:hover {
+  background-color: var(--color-action-hover);
+  color: var(--color-on-primary);
+}
+
+.button--secondary {
+  background-color: var(--color-mint-green);
+  border-color: var(--color-text);
+  color: var(--color-text);
+}
+
+.button--secondary:hover {
+  background-color: var(--color-butter-yellow);
+  color: var(--color-text);
+}
+
+.button--text {
+  min-height: auto;
+  padding: var(--space-1) 0;
+  color: var(--color-link);
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+}
+
+.button--text:hover {
+  color: var(--color-text);
+}
+
+.button:disabled {
+  opacity: 0.55;
+}

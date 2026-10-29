@@ -1,0 +1,15 @@
+.image-with-fallback + .image-fallback {
+  display: grid;
+  place-items: center;
+  padding: var(--space-4);
+  background-color: var(--color-photo-fallback);
+  color: var(--color-text-secondary);
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-semibold);
+  text-align: center;
+}
+
+.image-with-fallback:not([hidden]) + .image-fallback,
+.image-fallback[hidden] {
+  display: none;
+}

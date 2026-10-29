@@ -1,0 +1,110 @@
+.product-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  border-radius: var(--radius-lg);
+  transition: transform var(--duration-normal) var(--ease-standard);
+}
+
+.product-card:hover {
+  transform: translateY(-3px);
+}
+
+/* Show the keyboard focus ring around the whole card */
+.product-card:has(.product-card__link:focus-visible) {
+  outline: var(--focus-ring-width) solid var(--color-focus);
+  outline-offset: var(--focus-ring-offset);
+}
+
+.product-card__media {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  padding: 0;
+  border-radius: var(--radius-lg);
+  background-color: var(--color-surface);
+}
+
+.product-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--duration-normal) var(--ease-standard);
+}
+
+.product-card:hover .product-card__image {
+  transform: scale(1.03);
+}
+
+.product-card__badge {
+  position: absolute;
+  top: var(--space-3);
+  left: var(--space-3);
+}
+
+.product-card__badge.badge--new {
+  padding: 3px var(--space-3);
+  background-color: var(--color-mint-green);
+  box-shadow: none;
+  font-size: 0.6875rem;
+  letter-spacing: 0.03em;
+}
+
+.product-card__empty-photo {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  border-radius: var(--radius-lg);
+  background: var(--color-photo-fallback);
+  color: var(--color-text-secondary);
+  font-size: var(--text-sm);
+}
+
+.product-card__body {
+  display: grid;
+  gap: var(--space-1);
+}
+
+.product-card__category {
+  font-size: 0.6875rem;
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--color-coral-dark);
+}
+
+.product-card__title {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-snug);
+}
+
+.product-card__link {
+  color: var(--color-text);
+  text-decoration: none;
+  transition: color var(--duration-fast) var(--ease-standard);
+}
+
+.product-card__link:focus-visible {
+  outline: none;
+}
+
+/* Makes the whole card clickable while keeping a single link */
+.product-card__link::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-lg);
+}
+
+.product-card:hover .product-card__link {
+  color: var(--color-coral-dark);
+}
+
+.product-card .price {
+  font-size: var(--text-lg);
+  font-weight: var(--font-weight-bold);
+}

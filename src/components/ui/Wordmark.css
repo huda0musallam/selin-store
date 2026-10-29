@@ -1,0 +1,15 @@
+.wordmark {
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 1.35rem + 0.45vw, 1.875rem);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 0.025em;
+  line-height: 1;
+  color: var(--color-primary-hover);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color var(--duration-fast) var(--ease-standard);
+}
+
+.wordmark:hover {
+  color: var(--color-action-hover);
+}

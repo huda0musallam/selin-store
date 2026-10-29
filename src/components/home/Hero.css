@@ -1,0 +1,85 @@
+.hero {
+  padding-block: var(--space-8);
+  background: var(--color-blush-pink);
+}
+
+.hero__inner {
+  display: grid;
+  gap: var(--space-10);
+  align-items: center;
+}
+
+.hero__eyebrow {
+  margin-bottom: var(--space-3);
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-coral-dark);
+}
+
+.hero__title {
+  max-width: 14ch;
+}
+
+.hero__text {
+  margin-top: var(--space-4);
+  max-width: 46ch;
+  font-size: var(--text-lg);
+  color: var(--color-text-secondary);
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-8);
+}
+
+.hero__art {
+  position: relative;
+  min-width: 0;
+  padding: var(--space-1);
+  border-radius: 48% 48% var(--radius-xl) var(--radius-xl);
+  background: var(--color-butter-yellow);
+  transform: rotate(2deg);
+}
+
+.hero__photo { width: 100%; height: clamp(320px, 44vw, 540px); object-fit: cover; object-position: center 38%; border-radius: inherit; }
+.hero__art > .image-fallback { position: absolute; inset: var(--space-3); width: auto; height: auto; border-radius: inherit; }
+.hero__sparkle { position: absolute; top: 8%; right: 6%; display: grid; place-items: center; width: 56px; aspect-ratio: 1; border-radius: 50%; background: var(--color-sky-blue); color: var(--color-text); }
+
+.hero__note {
+  position: absolute;
+  bottom: 8%;
+  left: 50%;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-pill);
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-md);
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-semibold);
+  white-space: nowrap;
+  transform: translateX(-50%);
+}
+
+.hero__note svg {
+  color: var(--color-coral-dark);
+}
+
+@media (min-width: 768px) {
+  .hero {
+    padding-block: var(--space-12);
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero__inner {
+    grid-template-columns: 0.95fr 1.05fr;
+    gap: var(--space-16);
+  }
+
+}
